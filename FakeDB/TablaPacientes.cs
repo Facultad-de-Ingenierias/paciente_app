@@ -35,7 +35,7 @@ namespace FakeDB
                 Random random = new Random();
                 DocumentoId = 10000 + id;
                 TipoDocumento = (short)random.Next(1, 4);
-                Nombre = "NombrePacienteEPS" + id;
+                Nombre = "NombrePacienteJSON" + id;
                 Apellidos = "ApellidosPacienteEPS" + id;
                 Telefono1 = "Telefono1PacienteEPS" + id;
                 Telefono2 = "Telefono2PacienteEPS" + id;

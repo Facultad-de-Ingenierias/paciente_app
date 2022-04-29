@@ -1,7 +1,8 @@
-﻿using System;
-using L01_Domain;
-using L01_Domain.Paciente;
+﻿using L01_Domain.Paciente;
 using L02_Persistence;
+using System;
+
+
 
 namespace L01_Application
 {
@@ -13,7 +14,8 @@ namespace L01_Application
             try
             {   if(idPaciente is null)
                     return "{null}";
-                IPacienteCita paciente = RepositorioPacientes.GetPaciente(int.Parse(idPaciente));
+                IRepositorioPacientes repoP = FabricaRepositoriosPacientes.CrearRepositorioPacientes();
+                IPacienteCita paciente = repoP.GetPaciente(int.Parse(idPaciente));
                 return System.Text.Json.JsonSerializer.Serialize(paciente);
             }
             catch (PacienteNoEncontradoException ex)

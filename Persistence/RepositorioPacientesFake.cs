@@ -1,4 +1,6 @@
 ﻿
+
+
 using L01_Domain.Paciente;
 using System;
 using System.Collections.Generic;
@@ -6,7 +8,7 @@ using System.Linq;
 
 namespace L02_Persistence
 {
-    public static class RepositorioPacientes
+    public class RepositorioPacientesFake : IRepositorioPacientes
 
     /// <summary>
     /// Busca un  paciente en el repositorio de datos
@@ -18,7 +20,7 @@ namespace L02_Persistence
     /// en caso de no encontrar al paciente.</exception>
     /// <param name="idPaciente">Una cadena con la identificación del paciente</param>
     {
-        public static IPacienteCita GetPaciente(int idPaciente)
+        public IPacienteCita GetPaciente(int idPaciente)
         {
             List<Paciente> pacientes;
 
@@ -34,5 +36,7 @@ namespace L02_Persistence
             return paciente;
 
         }
+
+       
     }
 }
